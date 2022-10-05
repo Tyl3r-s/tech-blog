@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS techroll_db;
+
+CREATE DATABASE techroll_db;
