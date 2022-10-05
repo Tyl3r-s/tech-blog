@@ -1,5 +1,5 @@
 {
-  "name": "techroll",
+  "name": "tech-bits",
   "version": "1.0.0",
   "description": "CMS-style blog site",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanraposo/techroll.git"
+    "url": "git+https://github.com/Tyl3r-s/tech-blog"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ryanraposo/techroll/issues"
+    "url": "https://github.com/Tyl3r-s/tech-blog/issues"
   },
-  "homepage": "https://github.com/ryanraposo/techroll#readme",
+  "homepage": "https://github.com/Tyl3r-s/tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.5",
