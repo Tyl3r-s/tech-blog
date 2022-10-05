@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        attributes: ['id', 'title', 'text', 'created_at']
       },
       {
         model: Comment,
@@ -31,12 +31,6 @@ router.get('/:id', (req, res) => {
           model: Post,
           attributes: ['title']
         }
-      },
-      {
-        model: Post,
-        attributes: ['title'],
-        through: Vote,
-        as: 'voted_posts'
       }
     ]
   })
@@ -53,6 +47,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// create a user
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -75,6 +70,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// login
 router.post('/login', (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
@@ -104,6 +100,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+// logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -115,6 +112,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// edit a user
 router.put('/:id', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
@@ -138,6 +136,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// delete a user
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
@@ -156,5 +155,6 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 
 module.exports = router;
