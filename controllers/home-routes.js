@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'title',
-      'text',
+      'body',
       'created_at'
     ],
     include: [
@@ -49,7 +49,7 @@ router.get('/post/:id', (req, res) => {
     attributes: [
       'id',
       'title',
-      'text',
+      'body',
       'created_at'
     ],
     include: [
@@ -95,6 +95,20 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/create-post', (req, res) => {
+  if (req.session.loggedIn) {
+      res.render('create-post', {
+        loggedIn: req.session.loggedIn
+      });
+    return;
+  } else {
+  res.redirect('/');
+  }
+});
+
+
+
 
 
 module.exports = router;

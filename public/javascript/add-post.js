@@ -1,25 +1,7 @@
-async function newFormHandler(event) {
-    event.preventDefault();
-  
-    const title = document.querySelector('input[name="post-title"]').value;
-    const text = document.querySelector('input[name="post-text"]').value;
-  
-    const response = await fetch(`/api/posts`, {
-      method: 'POST',
-      body: JSON.stringify({
-        title,
-        text
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-  }
-  
-  document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+// NewformHandler will run on submit of create-post-button and redirect to /create-post route
+
+function newFormHandler() {
+  document.location.replace('/create-post');
+}
+
+document.getElementById('add-post-btn').addEventListener('click', newFormHandler);
