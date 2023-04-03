@@ -11,21 +11,7 @@
 <body>
   <div class="wrapper">
     <header>
-      <nav class="navBar">
-        <a href="/">
-          <img class="logo" src="logo.png">
-        </a>
-        <div class="btnContainer">
-        {{#if loggedIn}}
-        <a href="/">HOME</a>
-        <a href="/dashboard">DASHBOARD</a>
-        <button id="logout" class="btn-no-style">LOGOUT</button>
-        {{else}}
-        <a href="/">HOME</a>
-        <a href="/login">LOGIN</a>
-        {{/if}}
-        </div>
-      </nav>
+      {{> nav }}
     </header>
     <main>
       {{{ body }}}

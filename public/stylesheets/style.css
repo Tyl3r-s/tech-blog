@@ -18,6 +18,7 @@ main {
 }
 
 .logo {
+    background-image: url('/images/logo.png');
     width: 300px;
     margin: 10px;
 }
