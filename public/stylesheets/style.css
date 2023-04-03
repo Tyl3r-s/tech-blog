@@ -18,9 +18,11 @@ main {
 }
 
 .logo {
-    background-image: url('/images/logo.png');
-    width: 300px;
+    background-image: url('logo.png');
+    width: 320px;
+    height: 60px;
     margin: 10px;
+    background-size: cover;
 }
 
 .navBar {
