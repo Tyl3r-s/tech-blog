@@ -13,6 +13,7 @@ class Post extends Model {
             where: {
               id: body.post_id
             },
+            order: [['created_at', 'DESC']],
             attributes: [
               'id',
               'title',
