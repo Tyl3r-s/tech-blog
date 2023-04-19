@@ -24,7 +24,8 @@ router.get('/', (req, res) => {
         model: User,
         attributes: ['username']
       }
-    ]
+    ],
+    order: [['created_at', 'desc']]
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
@@ -106,9 +107,5 @@ router.get('/create-post', (req, res) => {
   res.redirect('/');
   }
 });
-
-
-
-
 
 module.exports = router;

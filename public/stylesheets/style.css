@@ -4,37 +4,43 @@
     padding: 0;
 }
 
-body,
-html {
+body {
     background: linear-gradient(rgba(17, 50, 69, 0.1),
             rgba(17, 50, 69, 0.1));
     min-height: 100vh;
     font-family: "Lucida Console", "Courier New", monospace;
+    margin: 0;
 }
 
 main {
     display: flex;
     justify-content: center;
+    z-index: -1;
+    overflow-x: hidden;
 }
 
 .logo {
     background-image: url('logo.png');
-    width: 300px;
-    height: 57px;
-    margin: 0 0 5px 5px;
+    width: 210px;
+    height: 40px;
+    margin: 2px 0 5px 15px;
     background-size: cover;
 }
 
 .navBar {
-    background: rgb(17, 50, 69);
+    position: fixed;
+    width: 100vw;
+    background: rgb(255, 255, 255);
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.168) 0px 5px 15px;
+    z-index: 30;
 }
 
 .navBar a {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-right: 20px;
     text-decoration: none;
     font-size: 25px;
@@ -47,7 +53,7 @@ main {
 
 button, input[type="submit"], input[type="reset"] {
 	background: none;
-	color: white;
+	color: rgb(0, 0, 0);
 	border: none;
 	padding: 0;
 	font: inherit;
@@ -98,34 +104,25 @@ button, input[type="submit"], input[type="reset"] {
     font-size: 20px;
 }
 
-.loginSignup {
-    min-width: 60vw;
-    display: grid;
-    justify-content: center;
+.signup-form {
+    margin-top: 10vh;
 }
 
-.loginSignup form button {
-    margin-left: 30px;
+.loginSignup {
+    width: 60vw;
+    display: grid;
+    justify-content: center;
+    margin-top: 10vh;
 }
 
 .loginSignup form div input {
     width:60vw;
 }
 
-.emailDiv {
-    margin-left: 30px;
-}
-
-.loginSignup form div {
-    margin: 15px;
-}
-
 .loginSignup button {
     color: white;
     border: 1px solid grey;
     border-radius: 35px;
-    padding: 1px 10px 1px 10px;
-    margin-top: 5px;
     background-color: gray;
     font-size: 20px;
 }
